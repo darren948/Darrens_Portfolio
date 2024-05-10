@@ -542,7 +542,8 @@ nav .navbar .links li .sub-menu li{
 }
 .carousel .list .item .buttons button{
     border: none;
-    background-color: var(--button);
+    width: 100%;
+    background-color: var(--colorp);
     color: white;
     letter-spacing: 3px;
     font-family: Poppins;
@@ -557,6 +558,7 @@ nav .navbar .links li .sub-menu li{
 }
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
+    width: 180%;
     border: 1px solid var(--color2);
     color: var(--color2);
     transition: background-color 0.3s, color 0.3s;
@@ -564,7 +566,7 @@ nav .navbar .links li .sub-menu li{
 .carousel .list .item .buttons button:nth-child(2):hover{
     background-color: transparent;
     border: 1px solid var(--colorp);
-    color: var(--colorahover);
+    color: var(--colorphover);
 }
 /* thumbail */
 .thumbnail{
@@ -825,7 +827,7 @@ nav .navbar .links li .sub-menu li{
     }
     .carousel .list .item .buttons {
         display: flex;
-        width: 50%; 
+        width: 100%; 
     }
     .carousel .list .item .buttons button {
         height: 30px; 
@@ -846,7 +848,7 @@ nav .navbar .links li .sub-menu li{
     }
     .carousel .list .item .buttons {
         display: flex;
-        width: 50%; 
+        width: 100%; 
     }
     .carousel .list .item .buttons button {
         height: 30px; 
@@ -867,14 +869,18 @@ nav .navbar .links li .sub-menu li{
     }
     .carousel .list .item .buttons {
         display: flex;
-        width: 50%; 
+        width: 60%; 
     }
     .carousel .list .item .buttons button {
         height: 30px; 
+        width: 150%;
         margin-top: -20px;
         font-size: 10px;
         letter-spacing: 1px;
     }
+    .carousel .list .item .buttons button:nth-child(2){
+      width: 230%;
+  }
 }
 /* ======= HOME SECTION END =======*/
 
@@ -1028,42 +1034,44 @@ h2 strong {
 
 /*======== Style for about image =======*/
 
-.about-image{
-    width: 100%;
-    order: 1;
-    position: relative;
-    z-index: 2;
-    transition-duration: 0.1s;
-    cursor: pointer;
-}
-
-.about-image1{
-    width: 100%;
-    order: 1;
-}
-
-.about-image::before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-image: linear-gradient(11deg, #1a1a1a 0%, #54595f 100%);
-    z-index: -1;
-    border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
-    box-shadow: 2px 10px 0px 0px rgba(0, 0, 0, 0.16);
-}
-
-.about-image:hover {
-    transform: scale(1.05);
+.about-image {
+  width: 100%;
+  order: 1;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.1s ease; /* Add transition for scaling */
 }
 
 .about-image img {
-    border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+  border-radius: 100%; /* Rounded border */
+  transition: transform 0.1s ease; /* Add transition for scaling */
+}
+
+.about-image::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-image: linear-gradient(11deg, #1a1a1a 0%, #54595f 100%);
+  z-index: -1;
+  border-radius: 100%; /* Rounded border */
+  box-shadow: 2px 10px 0px 0px rgba(0, 0, 0, 0.16);
+  transition: filter 0.1s ease; /* Add transition for shadow */
+}
+
+.about-image:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.about-image:hover img {
+  transform: scale(1.05); /* Scale up the image on hover */
 }
 
 .about-image:hover::before {
-    filter: drop-shadow(0 0 30px var(--shadow-color));
+  filter: drop-shadow(0 0 30px var(--shadow-color)); /* Apply shadow on hover */
 }
+
 
 /*SOCIAL MEDIA ICONS*/
 .icon-div {
@@ -1250,7 +1258,8 @@ h2 strong {
     position: relative;
     padding: 0 10px;
     background-color: var(--colorp);
-    font-size: 1.1rem;
+    font-size: 13px;
+    font-weight: 600;
     border-radius: 2px;
     line-height: 40px;
     color: white;
@@ -1394,7 +1403,7 @@ h2 strong {
   }
   
   .accordion-item {
-    background-color: var(--button);
+    background-color: var(--colorp);
     color: white;
     cursor: pointer;
     padding: 2px;
@@ -1421,7 +1430,7 @@ h2 strong {
     color: var(--colorahover);
   }
   .panel1 {
-    background-image: url(/img/w.gif);
+    background-image: url(/img/bgw.gif);
     background-size: cover;
     padding: 0 18px;
     max-height: 0;
@@ -1505,44 +1514,43 @@ h2 strong {
     }
 }
 
+
 /* ====== SERVICES SECTION ====== */
 
 #services {
-    padding: 60px 0;
-    background-color: var(--body-color);
+  padding: 60px 0;
+  background-color: var(--body-color);
 }
 
 .service-row {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Initially, display as a single column */
-    gap: 2rem;
-    margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly */
+  margin-top: 2rem;
 }
 
 .service-card {
-    background: var(--hover1);
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 20px 5px;
-    text-align: center;
-    transition: .4s;
+  background: var(--hover1);
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px; /* Reduced padding */
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Added transition */
+  width: calc(20% - 10px); /* Adjust width to fit five cards in a row */
+  margin-bottom: 1rem; /* Add margin to bottom */
 }
+
 
 .service-card .icon img {
-    width: 60%; 
-    height: 60%; 
+  width: 50%; /* Smaller image */
+  height: 50%; /* Smaller image */
 }
 
-.service-content h6,
-.service-content p {
-    color: var(--colora);
-    transition: .4s;
-    margin: 1rem 0;
-}
-
-.service-card:hover {
-    background-color: var(--hover2);
-    transform: translateY(-10.5px);
+.service-content h6 {
+  color: var(--colora);
+  transition: .4s;
+  margin: 0.5rem 0; /* Reduced margin */
+  font-size: 0.8rem; /* Smaller font size */
 }
 
 .service-card:hover .icon img,
@@ -1551,17 +1559,22 @@ h2 strong {
     color: var(--color6);
 }
 
-/* Responsive layout */
-@media (min-width: 768px) {
-    .service-row {
-        grid-template-columns: repeat(2, 1fr); /* On medium screens, display as two columns */
-    }
+/* Add hover effect */
+.service-card:hover {
+  background-color: var(--hover2);
+  transform: translateY(-5px); /* Move up by 5 pixels on hover */
 }
 
-@media (min-width: 992px) {
-    .service-row {
-        grid-template-columns: repeat(3, 1fr); /* On large screens, display as three columns */
-    }
+/* Adjust margin only for the top of the second row */
+.service-row:nth-child(n+2) .service-card {
+  margin-top: 5px; /* Adjust margin */
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .service-card {
+    width: calc(35.33% - 10px); /* Adjust width to fit three cards in a row */
+  }
 }
 
 
@@ -1675,13 +1688,14 @@ h2 strong {
   }
 .h4item{
   color: white;
+  font-size: 14px; /* Base font size */
 }
 .pitem{
   color: white;
-  font-size: 13px;
+  font-size: 11px; /* Base font size */
   font-weight: 200;
   text-align: center;
-  margin: 10px;
+  margin: 5px 10px; /* Adjusted margin */
 }
 .portfolio .section-head {
   max-width: 700px;
@@ -1725,15 +1739,17 @@ div.gallery {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Center items */
+  margin: 0 -10px; /* Balanced margin at the sides */
 }
 
 div.gallery .item {
   position: relative;
-  margin: 4px;
-  width: calc(33.33% - 8px);
+  margin: 0 10px 20px; /* Add margin at the sides and bottom */
+  width: calc(25% - 20px);
   overflow: hidden;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .item img {
@@ -1772,13 +1788,14 @@ div.gallery .item:hover img {
 
 .item .overlay a {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 10px 16px;
   margin-bottom: 10px; /* Added */
   background: rgb(91, 0, 165);
   color: white;
   text-decoration: none;
   font-size: 14px;
   transition: 0.3s;
+  border-radius: 5px;
 }
 
 .item .overlay a:hover {
@@ -1951,7 +1968,7 @@ div.gallery .item:hover img {
     margin: 20px 10px;
     border: none;
     padding: 10px 20px;
-    background: var(--button);
+    background: var(--colorp);
     color: rgb(235, 235, 235);
     font-size: 1rem;
     border-radius: 05px;
@@ -2192,22 +2209,6 @@ footer{
   .link-boxes .input-box input::placeholder{
     color: #AFAFB6;
     font-size: 16px;
-  }
-  .link-boxes .input-box input[type="button"]{
-    background: #38006d;
-    color: white;
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    margin: 4px 0;
-    opacity: 0.8;
-    cursor: pointer;
-    transition: all 0.4s ease;
-  }
-  .input-box input[type="button"]:hover{
-    opacity: 1;
-    background: var(--hover);
-    color: var(--colorahover);
   }
   footer .bottom-details{
     width: 100%;

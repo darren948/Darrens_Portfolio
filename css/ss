@@ -1,0 +1,50 @@
+/* Dark Mode Styles */
+:root {
+    --body-color: white;
+    --body-color1: rgb(245, 233, 255);
+    --header-bg: rgb(91, 0, 165);
+    --button: rgb(91, 0, 165);
+    --darkmode:rgb(0, 0, 0);
+    --hover:rgb(0, 1, 85);
+    --hover1:rgb(91, 0, 165);
+    --hover2: rgb(0, 1, 85);
+    --hover3: rgb(0, 1, 85);
+    --colora: white;
+    --colorp: rgb(91, 0, 165);
+    --colorphover: #00ffbf; /* Light mode active link color */
+    --colorahover: #00ffbf;
+    --color1: #3e4455;
+    --color2: #000;
+    --color3: white;
+    --color4:rgb(91, 0, 165);
+    --color5: white;
+    --color6: #00ffbf;
+    --shadow-color: rgba(99, 0, 228, 0.97);
+    --background-gradient: linear-gradient(to right,  #6200ff 10%, #7600ad 100%);
+    --primary-color: #38006d;
+}
+
+body.dark {
+    --body-color: black;
+    --body-color1: rgb(15, 15, 19);
+    --header-bg: black;
+    --button: #38006d;
+    --darkmode: rgb(91, 0, 165);
+    --hover:rgb(29, 0, 53);
+    --hover1: rgb(29, 0, 53);
+    --hover2: white;
+    --hover3: #38006d;
+    --colora: #c9c9c9;
+    --colorp: rgb(140, 0, 255);
+    --colorphover: rgb(140, 0, 255); /* Dark mode active link color */
+    --colorahover: rgb(255, 255, 255);
+    --color1: white;
+    --color2: white;
+    --color3: black;
+    --color4:white;
+    --color5: #38006d;
+    --color6: #000000;
+    --shadow-color: rgba(114, 114, 114, 0.97); /* Dark mode shadow color */
+    --background-gradient: linear-gradient(to right, #aa00f8 10%, #3100e4 100%);
+    --primary-color:rgb(255, 255, 255);
+}
